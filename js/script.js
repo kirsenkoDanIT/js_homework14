@@ -3,7 +3,6 @@
 $(document).ready(function () {
 
   const newTabs = new Tabs(".tabs-title", "active", ".tabs-content li", "name");
-  console.log(newTabs);
 
   function Tabs(tabClass, tabClassActive, itemClass, dataName) {
     const defaultTab = $(`${tabClass}.${tabClassActive}`).data(dataName);
