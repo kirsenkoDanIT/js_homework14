@@ -1,12 +1,11 @@
 "use strict";
 
-$(document).ready(function () {
-
+$(document).ready(function() {
   const newTabs = new Tabs(".tabs-title", "active", ".tabs-content li", "name");
 
   function Tabs(tabClass, tabClassActive, itemClass, dataName) {
     const defaultTab = $(`${tabClass}.${tabClassActive}`).data(dataName);
-    $(itemClass).each(function () {
+    $(itemClass).each(function() {
       $(this).data(dataName) === defaultTab ? $(this).show() : $(this).hide();
     });
     $(document).on("click", tabClass, event => {
@@ -14,11 +13,11 @@ $(document).ready(function () {
         .addClass(tabClassActive)
         .siblings()
         .removeClass(tabClassActive);
-      $(itemClass).each(function () {
-        $(event.currentTarget).data(dataName) === $(this).data(dataName) ?
-          $(this).show() :
-          $(this).hide();
+      $(itemClass).each(function() {
+        $(event.currentTarget).data(dataName) === $(this).data(dataName)
+          ? $(this).show()
+          : $(this).hide();
       });
     });
-  };
-})
+  }
+});
